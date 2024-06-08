@@ -40,6 +40,30 @@ $products = $stmt->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product List</title>
+    <style>
+        #pro-img{
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+        }
+       .container{
+         display: flex;
+         flex-wrap:wrap;
+         
+         
+       }
+       .container div{
+        width:350px;
+        height:350px;
+        margin-left: auto;
+        margin-left: auto;
+       }
+       .pages a{
+        position: relative;
+        background-color:red;
+        margin-bottom:-100px;
+       }
+    </style>
 </head>
 <body>
     <h2>Products</h2>
@@ -49,10 +73,10 @@ $products = $stmt->fetchAll();
         <input type="number" name="max_price" placeholder="Max Price" value="<?= htmlspecialchars($_GET['max_price'] ?? '') ?>">
         <button type="submit">Filter</button>
     </form>
-    <div>
+    <div class="container">
         <?php foreach ($products as $product): ?>
             <div>
-                <img src="<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
+                <img id="pro-img" src="<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
                 <h2><?= htmlspecialchars($product['name']) ?></h2>
                 <p><?= htmlspecialchars($product['description']) ?></p>
                 <p>$<?= htmlspecialchars($product['price']) ?></p>
@@ -60,7 +84,7 @@ $products = $stmt->fetchAll();
             </div>
         <?php endforeach; ?>
     </div>
-    <div>
+    <div class ="pages">
         <?php for ($i = 1; $i <= $pages; $i++): ?>
             <a href="?page=<?= $i ?>&search=<?= htmlspecialchars($_GET['search'] ?? '') ?>&min_price=<?= htmlspecialchars($_GET['min_price'] ?? '') ?>&max_price=<?= htmlspecialchars($_GET['max_price'] ?? '') ?>"><?= $i ?></a>
         <?php endfor; ?>
