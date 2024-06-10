@@ -1,5 +1,6 @@
+<?php include 'header.php'; ?>
 <?php
-session_start();
+
 require 'db.php';
 
 if (!isset($_SESSION['user_id'])) {
@@ -38,29 +39,33 @@ foreach ($cart_items as $item) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
+    <link rel="stylesheet" href="./css/product_list.css">
+    <link rel="stylesheet" href="./css/cart.css">
 </head>
 <body>
     <h2>Shopping Cart</h2>
     <div>
         <?php if ($cart_items): ?>
             <?php foreach ($cart_items as $item): ?>
-                <div>
+                <div class="cart-item">
                     <img src="<?= htmlspecialchars($item['image']) ?>" alt="<?= htmlspecialchars($item['name']) ?>">
                     <h3><?= htmlspecialchars($item['name']) ?></h3>
                     <p>$<?= htmlspecialchars($item['price']) ?></p>
                     <p>Quantity: <?= htmlspecialchars($item['quantity']) ?></p>
+                      <div class="forms">
                     <form method="POST" action="update_cart.php">
                         <input type="hidden" name="product_id" value="<?= $item['id'] ?>">
-                        <input type="number" name="quantity" value="<?= $item['quantity'] ?>" min="1">
+                        <input type="number" name="quantity" value="<?= $item['quantity'] ?>" min="1"><br>
                         <button type="submit">Update</button>
                     </form>
                     <form method="POST" action="remove_from_cart.php">
                         <input type="hidden" name="product_id" value="<?= $item['id'] ?>">
                         <button type="submit">Remove</button>
                     </form>
+            </div>
                 </div>
             <?php endforeach; ?>
-            <div>
+            <div class="total-cost">
                 <h3>Total Cost: $<?= htmlspecialchars($total_cost) ?></h3>
             </div>
         <?php else: ?>
@@ -69,3 +74,4 @@ foreach ($cart_items as $item) {
     </div>
 </body>
 </html>
+<?php require 'footer.php'; ?>
