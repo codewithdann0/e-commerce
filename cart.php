@@ -39,30 +39,29 @@ foreach ($cart_items as $item) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
-    <link rel="stylesheet" href="./css/product_list.css">
-    <link rel="stylesheet" href="./css/cart.css">
+    
+    <link rel="stylesheet" href="./css/cart.css?v=1.0.4">
 </head>
 <body>
     <h2>Shopping Cart</h2>
-    <div>
+    <div class="container">
         <?php if ($cart_items): ?>
             <?php foreach ($cart_items as $item): ?>
                 <div class="cart-item">
                     <img src="<?= htmlspecialchars($item['image']) ?>" alt="<?= htmlspecialchars($item['name']) ?>">
                     <h3><?= htmlspecialchars($item['name']) ?></h3>
-                    <p>$<?= htmlspecialchars($item['price']) ?></p>
-                    <p>Quantity: <?= htmlspecialchars($item['quantity']) ?></p>
-                      <div class="forms">
-                    <form method="POST" action="update_cart.php">
-                        <input type="hidden" name="product_id" value="<?= $item['id'] ?>">
-                        <input type="number" name="quantity" value="<?= $item['quantity'] ?>" min="1"><br>
-                        <button type="submit">Update</button>
-                    </form>
-                    <form method="POST" action="remove_from_cart.php">
-                        <input type="hidden" name="product_id" value="<?= $item['id'] ?>">
-                        <button type="submit">Remove</button>
-                    </form>
-            </div>
+                    <p>Quantity: <input type="number" name="quantity" value="<?= $item['quantity'] ?>" min="1"></p>
+                    <div class="buttons">
+                        <form method="POST" action="update_cart.php">
+                            <input type="hidden" name="product_id" value="<?= $item['id'] ?>">
+                            <input type="hidden" name="quantity" value="<?= $item['quantity'] ?>">
+                            <button type="submit">Update</button>
+                        </form>
+                        <form method="POST" action="remove_from_cart.php">
+                            <input type="hidden" name="product_id" value="<?= $item['id'] ?>">
+                            <button type="submit">Remove</button>
+                        </form>
+                    </div>
                 </div>
             <?php endforeach; ?>
             <div class="total-cost">
