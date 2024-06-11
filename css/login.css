@@ -1,8 +1,12 @@
-*{
+body{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    background-image: url('https://i.pinimg.com/originals/b0/a1/68/b0a168b54ef9fd4ee0446f76935568db.jpg');
+    background-size: cover;
+    background-position:center;
 }
+
 .error-border {
     border: 2px solid red;
 }
@@ -19,8 +23,9 @@
     margin-right: auto;
     background-color: gainsboro;
     width:350px;
-    height: 470px;
+    height: 400px;
     margin-top: 40px;
+    border: 2px solid white;
     padding: 60px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -35,7 +40,7 @@
 .container-box input[type="email"],
 .container-box input[type="password"] {
     width: 100%;
-    padding: 12px 20px;
+    padding: 12px 10px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -75,3 +80,12 @@
     font-size: 18px;
     color: #6c757d; /* A lighter shade of gray */}
 
+    .container-box a {
+        text-decoration:none;
+        color: #007bff;
+        margin-left:70px;
+        transition: transform 0.3s ease;     
+    }
+    .container-box a:hover{
+        transform: scale(1.2);
+    }

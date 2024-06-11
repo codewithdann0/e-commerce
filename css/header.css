@@ -7,6 +7,7 @@ body {
 }
 
 header {
+   position:fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,6 +16,7 @@ header {
     padding: 10px 15px;
     background-color: white; /* Changed background color to white */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index:5;
 }
 
 .logo a {
@@ -41,6 +43,7 @@ nav ul {
 
 nav ul li {
     margin-left: 10px;
+    
 }
 
 nav ul li:first-child {
@@ -51,7 +54,7 @@ nav ul li a {
     color: black; /* Changed link color to black */
     text-decoration: none;
     font-size: 18px; /* Increased font size to 18px */
-    padding: 8px 12px;
+    padding: 8px 12px;  
     transition: transform 0.3s ease; /* Added transition for scaling effect */
 }
 

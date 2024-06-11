@@ -1,7 +1,8 @@
+<?php include 'header.php'; ?>
 <?php
-session_start();
 require 'db.php';
 
+session_start();
 // Ensure user is logged in
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
@@ -9,27 +10,36 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Retrieve order details
-$order_id = $_GET['order_id'] ?? null;
+$order_id = $_GET['id'] ?? null; // Make sure the order ID is being passed correctly
 if (!$order_id) {
-    echo "Order not found!";
+    echo "Order ID is missing!";
     exit;
 }
 
 $user_id = $_SESSION['user_id'];
 
+
+
+
+// Fetch order details from the 'orders' table
 $stmt = $pdo->prepare('SELECT * FROM orders WHERE id = ? AND user_id = ?');
 $stmt->execute([$order_id, $user_id]);
 $order = $stmt->fetch();
 
 if (!$order) {
-    echo "Order not found!";
+    echo "Order not found in the orders table!";
     exit;
 }
 
-// Fetch order details from the database
-$stmt = $pdo->prepare('SELECT od.quantity, p.name, p.price FROM order_details od JOIN products p ON od.product_id = p.id WHERE od.order_id = ?');
+// Fetch order details from the 'order_details' and 'products' tables
+$stmt = $pdo->prepare('SELECT od.quantity, od.price, p.name FROM order_details od JOIN products p ON od.product_id = p.id WHERE od.order_id = ?');
 $stmt->execute([$order_id]);
 $order_details = $stmt->fetchAll();
+
+if (!$order_details) {
+    echo "Order details not found!";
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +48,7 @@ $order_details = $stmt->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Details</title>
-    <link rel="stylesheet" href="./css/order_details.css">
+    <link rel="stylesheet" href="./css/order_detail.css?V=1.0.3">
 </head>
 <body>
     <div class="container">
@@ -61,3 +71,4 @@ $order_details = $stmt->fetchAll();
     </div>
 </body>
 </html>
+<?php require 'footer.php'; ?>

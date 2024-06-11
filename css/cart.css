@@ -1,4 +1,31 @@
+/* cart.css */
+
+body {
+    font-family: Arial, sans-serif; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+h2 {
+  
+     padding-top:90px;
+    font-size: 34px;
+    color:black;
+    margin: 20px 0;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+}
 .cart-item {
+    margin-left:80px;
+    text-align:center;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -32,32 +59,45 @@
     color: #666;
 }
 
-.cart-item form {
-    margin-top: 10px;
+.cart-item p input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
 }
 
-.cart-item button {
-    padding: 10px 15px;
-    margin-top: 10px;
+.buttons {
+    display: flex;
+    justify-content: center;
+    width:200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttons form {
+    margin: 5px;
+}
+
+.buttons button {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: none;
     background-color: #007bff;
     color: white;
-    border: none;
-    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.cart-item button:hover {
+.buttons button:hover {
     background-color: #0056b3;
 }
 
 .total-cost {
     margin-top: 20px;
-    text-align:center;
+    text-align: center;
 }
 
 .total-cost h3 {
-    font-size: 20px;
-    color: #007bff;
-    margin: 10px 0;
+    font-size: 18px;
+    color: white;
 }

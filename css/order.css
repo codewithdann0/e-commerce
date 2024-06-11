@@ -7,6 +7,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/029/840/418/large_2x/e-commerce-shopping-cart-with-multiple-products-a-sunlit-abstract-background-e-commerce-concept-ai-generative-free-photo.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .container {

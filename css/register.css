@@ -1,7 +1,10 @@
-*{
+body{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    background-image: url('https://media.istockphoto.com/id/458689475/photo/rolex-shop-window.jpg?s=612x612&w=0&k=20&c=NvaJNm-W0YUEI8ft7EW7M93_9_ciGQxH-RgBTM4z13k=');
+    background-size: cover;
+    background-position: center;
 }
 .error-border {
     border: 2px solid red !important;
@@ -19,7 +22,7 @@
     margin-right: auto;
     background-color: gainsboro;
     width:350px;
-    height: 500px;
+    height: 400px;
     margin-top: 40px;
     padding: 60px;
     border-radius: 10px;
@@ -35,7 +38,7 @@
 .container-box input[type="email"],
 .container-box input[type="password"] {
     width: 100%;
-    padding: 12px 20px;
+    padding: 12px 30px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -75,3 +78,36 @@
     font-size: 18px;
     color: #6c757d; /* A lighter shade of gray */}
 
+    .container-box a {
+        text-decoration:none;
+        color: #007bff;
+        margin-left:70px;
+        transition: transform 0.3s ease;     
+    }
+    .container-box a:hover{
+        transform: scale(1.2);
+    }
+    .container-box .iconp{
+        position: absolute;
+        color:#000000;
+        top: 64%;
+        right: 62%;
+        transform: translateY(-50%);
+        font-size: 20px;
+    }
+    .container-box .icone{
+       position:absolute;
+       color:black;
+        top: 45%;
+        right: 62%;
+        transform: translateY(-50%);
+        font-size: 20px;
+    } 
+    .container-box .icon{
+        position: absolute;
+        color:black;
+        top: 41%;
+        right: 62%;
+        transform: translateY(-50%);
+        font-size: 20px;
+    }
