@@ -32,15 +32,13 @@ foreach ($cart_items as $item) {
     $total_cost += $item['price'] * $item['quantity'];
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
-    
-    <link rel="stylesheet" href="./css/cart.css?v=1.0.4">
+    <link rel="stylesheet" href="./css/cart.css?v=1.0.9">
 </head>
 <body>
     <h2>Shopping Cart</h2>
@@ -73,4 +71,5 @@ foreach ($cart_items as $item) {
     </div>
 </body>
 </html>
+
 <?php require 'footer.php'; ?>

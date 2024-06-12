@@ -2,29 +2,29 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+logo a{
+    margin-left: 0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    background-image: url('https://www.shutterstock.com/shutterstock/videos/1105915895/thumb/12.jpg?ip=x480');
-    background-position: center;
-    background-size: cover;
+   
 }
 
-.container {
-    padding: 20px;
-}
-
-h2, h3 {
+.container h2, h3 {
     text-align: center;
     color: #007bff;
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-h2 {
+.container h2 {
     font-size: 34px;
+}
+
+.container {
+    padding: 80px 20px 20px; /* Adjust top padding to account for the fixed header */
 }
 
 .product-form {
