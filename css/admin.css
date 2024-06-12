@@ -6,9 +6,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('https://static.vecteezy.com/system/resources/previews/029/840/418/large_2x/e-commerce-shopping-cart-with-multiple-products-a-sunlit-abstract-background-e-commerce-concept-ai-generative-free-photo.jpg');
-    background-size: cover;
-    background-position: center;
 }
 /* Add Product, Delete User, and Manage Products buttons */
 .button {

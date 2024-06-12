@@ -1,3 +1,4 @@
+
 <?php
 require 'db.php';
 session_start(); // Start the session
@@ -63,13 +64,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="./css/register.css">
-    <style>
-        .error-border {
-            border: 1px solid red;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="./css/register.css ?v=1.0.5">
+    
 </head>
 <body>
     <div class="container-box">
@@ -85,19 +84,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div>
                 <label for="username">Name:</label>
                 <input type="text" name="username" id="username" class="<?php echo !empty($field_errors['username']) ? 'error-border' : ''; ?>">
+                <span class="icon"><i class="fas fa-user"></i></span>
                 <div id="username-error" class="error-message"><?php echo $field_errors['username']; ?></div>
             </div>
             <div>
                 <label for="email">Email:</label>
                 <input type="email" name="email" id="email" class="<?php echo !empty($field_errors['email']) ? 'error-border' : ''; ?>">
+                <span class="icone"><i class="fas fa-envelope"></i></span>
                 <div id="email-error" class="error-message"><?php echo $field_errors['email']; ?></div>
             </div>
             <div>
                 <label for="password">Password:</label>
                 <input type="password" name="password" id="password" class="<?php echo !empty($field_errors['password']) ? 'error-border' : ''; ?>">
+                <span class="iconp"><i class="fas fa-lock"></i></span>
                 <div id="password-error" class="error-message"><?php echo $field_errors['password']; ?></div>
             </div>
             <button type="submit">Register</button>
+            <a href="login.php">Do You Have an Account ?</a>
         </form>
     </div>
     <script>

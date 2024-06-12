@@ -1,23 +1,21 @@
 /* styles.css */
-body{
-    background-image: url('https://static.vecteezy.com/system/resources/previews/029/840/418/large_2x/e-commerce-shopping-cart-with-multiple-products-a-sunlit-abstract-background-e-commerce-concept-ai-generative-free-photo.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
+
+
+body::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
 }
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
-    background-image:url('/images/imge-1.jpg');
 }
 
 h1 {
     font-size: 36px;
-    color: #333;
+    color: white;
     margin-bottom: 20px;
-    margin-top: 70px;
+    margin-top: 1px;
 }
 
 
@@ -26,3 +24,33 @@ p {
     color: #666;
     margin-bottom: 15px;
 }
+
+
+/* the style for the image*/
+
+.box img{
+    margin-top: 80px;
+    
+    margin-right: auto;
+}
+ img{
+    margin-left: 210px;
+    background-size: cover;
+    background-position:center;
+    width:800px;
+    height:300px;
+    border-radius: 30px;
+ }  
+ img:hover{
+    border:2px solid #0056b3;
+ }
+  a{
+    text-decoration: none;
+    font-size: 34px;
+    color:#0056b3;
+    transition: transform 0.3s ease; 
+ }
+div p a:hover{
+transform: scale(1.2);
+border-bottom: 2px soild #0056b3;
+ }

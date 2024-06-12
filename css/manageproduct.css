@@ -1,15 +1,30 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset default margin and padding */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    background-image:url('https://www.shutterstock.com/shutterstock/videos/1105915895/thumb/12.jpg?ip=x480');
+    background-image: url('https://www.shutterstock.com/shutterstock/videos/1105915895/thumb/12.jpg?ip=x480');
     background-position: center;
-    background-size:cover;
+    background-size: cover;
+}
+
+.container {
+    padding: 20px;
 }
 
 h2, h3 {
     text-align: center;
+    color: #007bff;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 34px;
 }
 
 .product-form {
@@ -21,7 +36,6 @@ h2, h3 {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
-    width:80%;
 }
 
 .product-form input,

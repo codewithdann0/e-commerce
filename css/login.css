@@ -40,7 +40,7 @@ body{
 .container-box input[type="email"],
 .container-box input[type="password"] {
     width: 100%;
-    padding: 12px 10px;
+    padding: 12px 42px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -89,3 +89,5 @@ body{
     .container-box a:hover{
         transform: scale(1.2);
     }
+    
+    

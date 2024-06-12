@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-    margin-top: 150px;
+    margin-top: 120px;
     margin-bottom: 50px;
     max-width: 500px;
     margin-left:auto;
@@ -23,7 +23,8 @@ body {
 }
 
 h2 {
-       text-align: center;
+
+    text-align: center;
     margin-bottom: 20px;
 }
 

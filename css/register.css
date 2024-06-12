@@ -87,27 +87,61 @@ body{
     .container-box a:hover{
         transform: scale(1.2);
     }
+    
+    /*The icons csss*/
+
+    .container-box {
+        position: relative; /* Add position relative to the container */
+    }
+    
+    .container-box .icon,
+    .container-box .icone,
+    .container-box .iconp {
+        position: absolute;
+        top: 50%; /* Position icons vertically centered */
+        right: 10px; /* Adjust the right spacing as needed */
+        transform: translateY(-50%);
+        color: black;
+        font-size: 20px;
+        pointer-events: none; /* Ensure icons don't interfere with input events */
+    }
+    
+    .container-box .icon i,
+    .container-box .icone i,
+    .container-box .iconp i {
+        pointer-events: none; /* Ensure icons don't interfere with input events */
+    }
+    
+    .container-box input[type="text"],
+    .container-box input[type="email"],
+    .container-box input[type="password"] {
+        padding-right: 30px; /* Add padding to the right of input fields to accommodate icons */
+    }
+        .error-border {
+            border: 1px solid red;
+        }
     .container-box .iconp{
         position: absolute;
-        color:#000000;
-        top: 64%;
-        right: 62%;
+        color:#007bff;
+        top: 69.5%;
+        right: 82%;
         transform: translateY(-50%);
         font-size: 20px;
     }
     .container-box .icone{
        position:absolute;
-       color:black;
-        top: 45%;
-        right: 62%;
+       color:#007bff;
+        top: 54.5%;
+        right: 81%;
         transform: translateY(-50%);
         font-size: 20px;
     } 
     .container-box .icon{
         position: absolute;
-        color:black;
-        top: 41%;
-        right: 62%;
+        color:#007bff;
+        top: 38.5%;
+        right: 81%;
         transform: translateY(-50%);
         font-size: 20px;
     }
+        
