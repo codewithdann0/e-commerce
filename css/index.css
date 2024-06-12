@@ -54,3 +54,16 @@ div p a:hover{
 transform: scale(1.2);
 border-bottom: 2px soild #0056b3;
  }
+
+ @media (max-width: 768px){
+   .box{
+    text-align: center;
+   }
+    .box img{
+        width:400px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-left: 5vh;
+        margin-right: 40px;
+    }
+ }

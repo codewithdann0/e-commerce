@@ -69,12 +69,12 @@ nav ul li a.active {
 @media (max-width: 768px) {
     .logo a {
         margin-left: 10px;
-        font-size: 20px;
+        font-size: 24px;
     }
     nav ul {
         display: none;
         flex-direction: column;
-        background-color: rgb(235, 237, 237); /* Gray background for menu */
+        background-color: whitesmoke; /* Gray background for menu */
         position: absolute;
         top: 0px; /* Below the header */
         left: 0;
@@ -88,11 +88,16 @@ nav ul li a.active {
         margin: 10px 0;
         text-align: left;
     }
+   
     .icon {
         display: block;
         position: absolute;
         right: 10%;
         font-size: 34px;
-        top: 25%;
+        top: 21%;
+        transition: transform 0.3s ease;
+    }
+    .icon:hover{
+        transform: scale(1.2);
     }
 }
