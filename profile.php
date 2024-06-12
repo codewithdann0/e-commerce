@@ -1,4 +1,6 @@
-<?php include 'header.php'; ?>
+<?php
+require 'header.php';
+?>
 <?php
 require 'db.php';
 
@@ -14,19 +16,11 @@ $stmt = $pdo->prepare('SELECT * FROM users WHERE id = ?');
 $stmt->execute([$user_id]);
 $user = $stmt->fetch();
 
-// Handle form submission for updating user information
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Validate and update user information (you can add validation here)
-    $username = $_POST['username'];
-    $email = $_POST['email'];
+// Fetch user's orders from the database
+$stmt = $pdo->prepare('SELECT id FROM orders WHERE user_id = ?');
+$stmt->execute([$user_id]);
+$orders = $stmt->fetchAll();
 
-    $stmt = $pdo->prepare('UPDATE users SET username = ?, email = ? WHERE id = ?');
-    $stmt->execute([$username, $email, $user_id]);
-
-    // Redirect back to profile page after updating
-    header('Location: profile.php');
-    exit;
-}
 ?>
 
 <!DOCTYPE html>
@@ -35,10 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
-    <link rel="stylesheet" href="./css/profile.css"> <!-- You may need to adjust the path -->
+    <link rel="stylesheet" href="./css/profile.css?v=1.1.14"> <!-- You may need to adjust the path -->
 </head>
 <body>
     <div class="container">
+        <div>
         <h2>User Profile</h2>
         <!-- User Information Form -->
         <form method="POST">
@@ -49,14 +44,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Update</button>
         </form>
         <div class="links">
-            <!-- Links to Order-related Pages -->
-            <a href="order.php">View Orders</a>
-            <a href="order_detail.php">Order Details</a>
+            <!-- Link to View Orders -->
+            <a href="order.php">Order</a><br>
+            <!-- Links to Order Details -->
+            
+            <?php foreach ($orders as $order): ?>
+               <a href="order_detail.php?id=<?php echo $order['id']; ?>">Orders</a><br>
+        <?php endforeach; ?>
+
+            
         </div>
         <!-- Logout Link -->
         <div class="logout-link">
             <a href="logout.php">Logout</a>
         </div>
+     </div>
     </div>
 </body>
 </html>
