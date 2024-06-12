@@ -1,4 +1,7 @@
 <?php
+require 'header.php';
+?>
+<?php
 require 'db.php';
 
 $limit = 15;
@@ -40,31 +43,10 @@ $products = $stmt->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product List</title>
-    <style>
-        #pro-img{
-            width: 200px;
-            height: 200px;
-            border-radius: 10px;
-        }
-       .container{
-         display: flex;
-         flex-wrap:wrap;
-         
-         
-       }
-       .container div{
-        width:350px;
-        height:350px;
-        margin-left: auto;
-        margin-left: auto;
-       }
-       .pages a{
-        position: relative;
-        background-color:red;
-        margin-bottom:-100px;
-       }
-    </style>
+    <link rel="stylesheet" href="./css/product_list.css?v=1.0.16">
 </head>
+<style>
+</style>
 <body>
     <h2>Products</h2>
     <form method="GET">
@@ -84,10 +66,11 @@ $products = $stmt->fetchAll();
             </div>
         <?php endforeach; ?>
     </div>
-    <div class ="pages">
+    <div class="pages">
         <?php for ($i = 1; $i <= $pages; $i++): ?>
             <a href="?page=<?= $i ?>&search=<?= htmlspecialchars($_GET['search'] ?? '') ?>&min_price=<?= htmlspecialchars($_GET['min_price'] ?? '') ?>&max_price=<?= htmlspecialchars($_GET['max_price'] ?? '') ?>"><?= $i ?></a>
         <?php endfor; ?>
     </div>
 </body>
 </html>
+<?php require 'footer.php'; ?>
