@@ -13,31 +13,47 @@ require 'functions.php';
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/header.css?v=1.0.7">
     <title>Header</title>
+    <style>
+       
+    </style>
 </head>
 <body>
     <header>
         <div class="logo">
             <a href="index.php">EthioBuy</a>
+            <div class="icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
         <nav>
             <ul>
-                <li><a href="index.php" class="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '' ?>"><i class="fa-solid fa-house">  Home</i></a></li>
-                <li><a href="product_list.php" class="<?= basename($_SERVER['PHP_SELF']) == 'product_list.php' ? 'active' : '' ?>"><i class="fa-solid fa-shop"> Products</i></a></li>
-                <li><a href="cart.php" class="<?= basename($_SERVER['PHP_SELF']) == 'cart.php' ? 'active' : '' ?>"><i class="fa-solid fa-cart-shopping"> Cart </i></a></li>
+                <li><a href="index.php" class="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '' ?>">Home</a></li>
+                <li><a href="product_list.php" class="<?= basename($_SERVER['PHP_SELF']) == 'product_list.php' ? 'active' : '' ?>">Products</a></li>
+                <li><a href="cart.php" class="<?= basename($_SERVER['PHP_SELF']) == 'cart.php' ? 'active' : '' ?>">Cart</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
-                    <li><a href="profile.php" class="<?= basename($_SERVER['PHP_SELF']) == 'profile.php' ? 'active' : '' ?>"><i class="fa-solid fa-user"> Profile</i></a></li>
-                    <li><a href="logout.php"><i class="fa-solid fa-right-from-bracket"> Logout</i></a></li>
+                    <li><a href="profile.php" class="<?= basename($_SERVER['PHP_SELF']) == 'profile.php' ? 'active' : '' ?>">Profile</a></li>
+                    <li><a href="logout.php">Logout</a></li>
                     <?php if (isAdmin($_SESSION['user_id'])): ?>
-                     <li><a href="admin.php" class="<?= basename($_SERVER['PHP_SELF']) == 'admin.php' ? 'active' : '' ?>"><i class="fa-brands fa-black-tie"> Admin</i></a></li>
+                        <li><a href="admin.php" class="<?= basename($_SERVER['PHP_SELF']) == 'admin.php' ? 'active' : '' ?>">Admin</a></li>
                     <?php endif; ?>
                 <?php else: ?>
-                    <li><a href="login.php" class="<?= basename($_SERVER['PHP_SELF']) == 'login.php' ? 'active' : '' ?>"><i class="fa-solid fa-right-to-bracket"> Login</i></a></li>
-                    <li><a href="register.php" class="<?= basename($_SERVER['PHP_SELF']) == 'register.php' ? 'active' : '' ?>"><i class="fa-solid fa-registered">Register</i></a></li>
+                    <li><a href="login.php" class="<?= basename($_SERVER['PHP_SELF']) == 'login.php' ? 'active' : '' ?>">Login</a></li>
+                    <li><a href="register.php" class="<?= basename($_SERVER['PHP_SELF']) == 'register.php' ? 'active' : '' ?>">Register</a></li>
                 <?php endif; ?>
             </ul>
+            <!-- Menu bar icon -->
+           
         </nav>
     </header>
+    
+    <!-- JavaScript for toggling menu -->
+    <script>
+        function toggleMenu() {
+            var nav = document.querySelector('nav ul');
+            nav.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>

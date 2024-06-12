@@ -1,5 +1,3 @@
-/* header.css */
-
 body {
     margin: 0;
     padding: 0;
@@ -7,24 +5,24 @@ body {
 }
 
 header {
-   position:fixed;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 50px; /* Changed height to 90px */
+    height: 50px;
     padding: 10px 15px;
-    background-color: white; /* Changed background color to white */
+    background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index:5;
+    z-index: 5;
 }
 
 .logo a {
     font-size: 40px;
-    color: #0056b3; /* Changed color to match the logo color */
+    color: #0056b3;
     text-decoration: none;
     font-weight: bold;
-    margin-left: 40px !important;
+    margin-left: 40px;
     font-family: "Jacques Francois", serif !important;
 }
 
@@ -43,7 +41,6 @@ nav ul {
 
 nav ul li {
     margin-left: 10px;
-    
 }
 
 nav ul li:first-child {
@@ -51,45 +48,51 @@ nav ul li:first-child {
 }
 
 nav ul li a {
-    color: black; /* Changed link color to black */
+    color: black;
     text-decoration: none;
-    font-size: 18px; /* Increased font size to 18px */
-    padding: 8px 12px;  
-    transition: transform 0.3s ease; /* Added transition for scaling effect */
+    font-size: 18px;
+    padding: 8px 12px;
+    transition: transform 0.3s ease;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-    border-bottom: 2px solid #0056b3; /* Added border-bottom on hover */
-    transform: scale(1.1); /* Scales the link on hover */
+    border-bottom: 2px solid #0056b3;
+    transform: scale(1.1);
+}
+
+.icon {
+    display: none;
 }
 
 /* Responsive design for mobile devices */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
+    .logo a {
+        margin-left: 10px;
+        font-size: 20px;
     }
-
-    .logo {
-        margin-bottom: 10px;
-        margin-left: 0; /* Reset margin to zero */
-    }
-
-    nav {
-        width: 100%;
-    }
-
     nav ul {
-        flex-direction: row;
-        align-items: center;
+        display: none;
+        flex-direction: column;
+        background-color: rgb(235, 237, 237); /* Gray background for menu */
+        position: absolute;
+        top: 0px; /* Below the header */
+        left: 0;
+        width: 30%;
+        padding: 10px 0;
     }
-
+    nav ul.show {
+        display: flex;
+    }
     nav ul li {
-        margin: 10px 0; /* Adjusted margin to create space on small screens */
+        margin: 10px 0;
+        text-align: left;
     }
-
-    nav ul li a {
-        padding: 5px 12px; /* Reduced padding for links on small screens */
+    .icon {
+        display: block;
+        position: absolute;
+        right: 10%;
+        font-size: 34px;
+        top: 25%;
     }
 }
