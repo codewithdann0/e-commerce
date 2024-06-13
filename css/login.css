@@ -89,5 +89,43 @@ body{
     .container-box a:hover{
         transform: scale(1.2);
     }
+    .container-box .iconp{
+        position: absolute;
+        color:#007bff;
+        top: 55.5%;
+        right: 61.5%;
+        transform: translateY(-50%);
+        font-size: 20px;
+    }
+    .container-box .icone{
+       position:absolute;
+       color:#007bff;
+        top: 42%;
+        right: 61%;
+        transform: translateY(-50%);
+        font-size: 20px;
+    } 
     
-    
+
+    @media (max-width:760px){
+        .container-box{
+            width:55%;
+            height: 320px;
+        }
+        .container-box h2{
+            margin-top:-8px;
+        }
+        .container-box .iconp{
+            top: 48.8%;
+            right: 69.5%;
+            font-size:17px;
+        }
+        .container-box .icone{
+            top: 35.3%;
+            right: 69.5%;
+            font-size: 17px;
+        } 
+        .container-box a{
+            margin-left: 50px;
+        }
+    }

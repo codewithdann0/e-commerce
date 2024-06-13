@@ -144,4 +144,30 @@ body{
         transform: translateY(-50%);
         font-size: 20px;
     }
+@media (max-width:760px){
+    .container-box{
+        width:55%;
+        height: 350PX;
         
+    }
+    .container-box h2{
+        margin-top:-8px;
+    }
+    .container-box a{
+    margin-left: 37px;
+    }
+    .container-box .icone{
+         top: 52.9%;
+         right: 77%;
+         font-size: 17px;
+     } 
+     .container-box .icon{
+         top: 35.3%;
+         right: 77%;
+         font-size: 17px;
+     }
+     .container-box .iconp{
+        top:69.7%;
+        right:77%;
+     }
+}
