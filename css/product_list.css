@@ -60,7 +60,6 @@ form button:hover {
     width: 300px;
     height:auto;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
 }
 
